@@ -43,9 +43,13 @@ const siteContent = {
 let headerNavigation = document.querySelectorAll("header nav a")
 headerNavigation.forEach((item, index) => item.innerText = siteContent["nav"][`nav-item-${index + 1}`])
 
-// TODO
-// let newNavigation = document.querySelector("header nav")
-// newNavigation.appendChild()
+// Prepend Home link to navigation bar
+let homeLink = document.createElement("a")
+homeLink.setAttribute("href", "#")
+homeLink.innerText = "Home"
+
+let newNavigation = document.querySelector("header nav")
+newNavigation.prepend(homeLink)
 
 // Logo Image
 let logo = document.getElementById("logo-img")
@@ -77,7 +81,7 @@ let middleImage = document.getElementById("middle-img")
 middleImage.setAttribute("src", siteContent["main-content"]["middle-img-src"])
 
 // Contact
-let contactMapper = ["address", "phone", "email"]
+const contactMapper = ["address", "phone", "email"]
 
 let contactHeading = document.querySelector(".contact h4")
 contactHeading.innerText = siteContent["contact"]["contact-h4"]
