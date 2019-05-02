@@ -77,7 +77,13 @@ let middleImage = document.getElementById("middle-img")
 middleImage.setAttribute("src", siteContent["main-content"]["middle-img-src"])
 
 // Contact
-// TODO
+let contactMapper = ["address", "phone", "email"]
+
+let contactHeading = document.querySelector(".contact h4")
+contactHeading.innerText = siteContent["contact"]["contact-h4"]
+
+let contactAddress = document.querySelectorAll(".contact p")
+contactAddress.forEach((item, index) => item.innerText = siteContent["contact"][contactMapper[index]])
 
 // Footer
 let footerCopyright = document.querySelector("footer p")
