@@ -44,12 +44,12 @@ let headerNavigation = document.querySelectorAll("header nav a")
 headerNavigation.forEach((item, index) => item.innerText = siteContent["nav"][`nav-item-${index + 1}`])
 
 // TODO
-// let newNavigation = document.querySelector('header nav')
+// let newNavigation = document.querySelector("header nav")
 // newNavigation.appendChild()
 
 // Logo Image
 let logo = document.getElementById("logo-img")
-logo.setAttribute('src', siteContent["nav"]["img-src"])
+logo.setAttribute("src", siteContent["nav"]["img-src"])
 
 // Call to Action
 
@@ -61,20 +61,24 @@ ctaButton.innerText = siteContent["cta"]["button"]
 
 // CTA Header Image
 let ctaHeaderImage = document.getElementById("cta-img")
-ctaHeaderImage.setAttribute('src', siteContent["cta"]["img-src"])
+ctaHeaderImage.setAttribute("src", siteContent["cta"]["img-src"])
 
 // Main Content
-const contentMapper = ['features', 'about', 'product', 'services', 'vision']
+const contentMapper = ["features", "about", "product", "services", "vision"]
 
-let mainHeadings = document.querySelectorAll('.text-content h4')
-mainHeadings.forEach((item, index) => item.innerText = siteContent['main-content'][`${contentMapper[index]}-h4`])
+let mainHeadings = document.querySelectorAll(".text-content h4")
+mainHeadings.forEach((item, index) => item.innerText = siteContent["main-content"][`${contentMapper[index]}-h4`])
 
-let textContent = document.querySelectorAll('.text-content p')
-textContent.forEach((item, index) => item.innerText = siteContent['main-content'][`${contentMapper[index]}-content`])
+let textContent = document.querySelectorAll(".text-content p")
+textContent.forEach((item, index) => item.innerText = siteContent["main-content"][`${contentMapper[index]}-content`])
 
 // Middle Image
-let middleImage = document.getElementById('middle-img')
-middleImage.setAttribute('src', siteContent['main-content']['middle-img-src'])
+let middleImage = document.getElementById("middle-img")
+middleImage.setAttribute("src", siteContent["main-content"]["middle-img-src"])
 
 // Contact
 // TODO
+
+// Footer
+let footerCopyright = document.querySelector("footer p")
+footerCopyright.innerText = siteContent["footer"]["copyright"]
