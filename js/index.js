@@ -89,6 +89,17 @@ contactHeading.innerText = siteContent["contact"]["contact-h4"]
 let contactAddress = document.querySelectorAll(".contact p")
 contactAddress.forEach((item, index) => item.innerText = siteContent["contact"][contactMapper[index]])
 
+// Add a paragraph to end of contact information.
+let contactParagraph = document.createElement("p")
+let contactParagraphNode = document.createTextNode(`Donec commodo interdum aliquet.
+Maecenas at ante at lacus egestas consequat id vel urna. Cras eget orci in lacus
+lacinia euismod sit amet sit amet.`)
+
+contactParagraph.appendChild(contactParagraphNode)
+
+let contactElement = document.querySelector(".contact")
+contactElement.append(contactParagraph)
+
 // Footer
 let footerCopyright = document.querySelector("footer p")
 footerCopyright.innerText = siteContent["footer"]["copyright"]
