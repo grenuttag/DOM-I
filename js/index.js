@@ -37,6 +37,69 @@ const siteContent = {
   },
 };
 
-// Example: Update the img src for the logo
-let logo = document.getElementById("logo-img");
-logo.setAttribute('src', siteContent["nav"]["img-src"])
+// Header
+
+// Navigation
+let headerNavigation = document.querySelectorAll("header nav a")
+headerNavigation.forEach((item, index) => item.innerText = siteContent["nav"][`nav-item-${index + 1}`])
+
+// Prepend Home link to navigation bar
+let homeLink = document.createElement("a")
+homeLink.setAttribute("href", "#")
+homeLink.innerText = "Home"
+
+let newNavigation = document.querySelector("header nav")
+newNavigation.prepend(homeLink)
+
+// Logo Image
+let logo = document.getElementById("logo-img")
+logo.setAttribute("src", siteContent["nav"]["img-src"])
+
+// Call to Action
+
+let ctaHeading = document.querySelector(".cta-text h1")
+ctaHeading.innerText = siteContent["cta"]["h1"]
+
+let ctaButton = document.querySelector(".cta-text button")
+ctaButton.innerText = siteContent["cta"]["button"]
+
+// CTA Header Image
+let ctaHeaderImage = document.getElementById("cta-img")
+ctaHeaderImage.setAttribute("src", siteContent["cta"]["img-src"])
+
+// Main Content
+const contentMapper = ["features", "about", "product", "services", "vision"]
+
+let mainHeadings = document.querySelectorAll(".text-content h4")
+mainHeadings.forEach((item, index) => item.innerText = siteContent["main-content"][`${contentMapper[index]}-h4`])
+
+let textContent = document.querySelectorAll(".text-content p")
+textContent.forEach((item, index) => item.innerText = siteContent["main-content"][`${contentMapper[index]}-content`])
+
+// Middle Image
+let middleImage = document.getElementById("middle-img")
+middleImage.setAttribute("src", siteContent["main-content"]["middle-img-src"])
+
+// Contact
+const contactMapper = ["address", "phone", "email"]
+
+let contactHeading = document.querySelector(".contact h4")
+contactHeading.innerText = siteContent["contact"]["contact-h4"]
+
+let contactAddress = document.querySelectorAll(".contact p")
+contactAddress.forEach((item, index) => item.innerText = siteContent["contact"][contactMapper[index]])
+
+// Add a paragraph to end of contact information.
+let contactParagraph = document.createElement("p")
+let contactParagraphNode = document.createTextNode(`Donec commodo interdum aliquet.
+Maecenas at ante at lacus egestas consequat id vel urna. Cras eget orci in lacus
+lacinia euismod sit amet sit amet.`)
+
+contactParagraph.appendChild(contactParagraphNode)
+
+let contactElement = document.querySelector(".contact")
+contactElement.append(contactParagraph)
+
+// Footer
+let footerCopyright = document.querySelector("footer p")
+footerCopyright.innerText = siteContent["footer"]["copyright"]
